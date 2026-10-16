@@ -14,7 +14,6 @@ import { FAQ } from './components/FAQ';
 import { Footer } from './components/Footer';
 import { LegalModal } from './components/LegalModal';
 import { CookieBanner } from './components/CookieBanner';
-import { FloatingBookingButton } from './components/FloatingBookingButton';
 
 export default function App() {
   // 1. Language State (PT default, persistent in localStorage with try/catch)
@@ -167,9 +166,6 @@ export default function App() {
         onOpenLegal={(type) => setActiveLegalModal(type)}
         onOpenCookieSettings={() => setIsCookieSettingsOpen(true)}
       />
-
-      {/* Floating CTA (Fresha) bottom right */}
-      <FloatingBookingButton lang={lang} />
 
       {/* Legal Document Modal (Privacy Policy, Cookie Policy, Terms) */}
       <LegalModal

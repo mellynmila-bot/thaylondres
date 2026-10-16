@@ -56,7 +56,8 @@ export const Gallery: React.FC<GalleryProps> = ({ lang }) => {
                 src={imgUrl}
                 alt={t.alts[index] || `Maquiagem artística por Thalyta Pires ${index + 1}`}
                 className="w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-500 ease-out"
-                loading="lazy"
+                loading={index < 4 ? 'eager' : 'lazy'}
+                decoding="async"
                 width="500"
                 height="500"
               />

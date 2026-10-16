@@ -68,7 +68,10 @@ export const Course: React.FC<CourseProps> = ({ lang }) => {
                   src={photos[0]}
                   alt="Maquiagem para o dia - Curso de Automaquiagem"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
+                  loading="eager"
+                  decoding="async"
+                  width="600"
+                  height="450"
                 />
                 <div className="absolute inset-0 bg-[#2F2F31]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                   <span className="px-3 py-1 bg-[#F6F1E8] text-xs font-semibold tracking-wider text-[#2F2F31]">
@@ -108,7 +111,10 @@ export const Course: React.FC<CourseProps> = ({ lang }) => {
                   src={photos[1]}
                   alt="Maquiagem para a noite - Curso de Automaquiagem"
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
+                  loading="eager"
+                  decoding="async"
+                  width="600"
+                  height="450"
                 />
                 <div className="absolute inset-0 bg-[#2F2F31]/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                   <span className="px-3 py-1 bg-[#F6F1E8] text-xs font-semibold tracking-wider text-[#2F2F31]">

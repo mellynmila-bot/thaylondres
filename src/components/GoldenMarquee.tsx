@@ -7,8 +7,8 @@ interface GoldenMarqueeProps {
 
 export const GoldenMarquee: React.FC<GoldenMarqueeProps> = ({ lang }) => {
   const words = translations[lang].marquee;
-  // Repeat words to create seamless infinite marquee loop
-  const repeatedWords = [...words, ...words, ...words, ...words];
+  // Repeat words so each track easily spans beyond screen width
+  const items = [...words, ...words];
 
   return (
     <div className="relative z-20 w-full overflow-hidden bg-[#C6A25A] py-3.5 sm:py-4 shadow-xl border-y border-[#E8D5A2]">
@@ -18,17 +18,35 @@ export const GoldenMarquee: React.FC<GoldenMarqueeProps> = ({ lang }) => {
         aria-hidden="true"
       />
 
-      <div className="flex animate-marquee whitespace-nowrap text-[#2F2F31] select-none">
-        {repeatedWords.map((word, idx) => (
-          <div key={idx} className="flex items-center mx-4 sm:mx-6 shrink-0">
-            <span className="font-sans font-extrabold text-xs sm:text-sm tracking-[0.28em] uppercase text-[#2F2F31]">
-              {word}
-            </span>
-            <span className="ml-4 sm:ml-6 text-xs text-[#2F2F31]/80 select-none" aria-hidden="true">
-              ✦
-            </span>
-          </div>
-        ))}
+      {/* Dual Track Infinite Loop - Completely seamless with zero jump or empty gap */}
+      <div className="flex w-max select-none group">
+        {/* Track 1 */}
+        <div className="flex shrink-0 animate-marquee items-center group-hover:[animation-play-state:paused]">
+          {items.map((word, idx) => (
+            <div key={`track1-${idx}`} className="flex items-center mx-4 sm:mx-6 shrink-0">
+              <span className="font-sans font-extrabold text-xs sm:text-sm tracking-[0.28em] uppercase text-[#2F2F31]">
+                {word}
+              </span>
+              <span className="ml-4 sm:ml-6 text-xs text-[#2F2F31]/80 select-none" aria-hidden="true">
+                ✦
+              </span>
+            </div>
+          ))}
+        </div>
+
+        {/* Track 2 - Exact clone so loop is continuous */}
+        <div className="flex shrink-0 animate-marquee items-center group-hover:[animation-play-state:paused]" aria-hidden="true">
+          {items.map((word, idx) => (
+            <div key={`track2-${idx}`} className="flex items-center mx-4 sm:mx-6 shrink-0">
+              <span className="font-sans font-extrabold text-xs sm:text-sm tracking-[0.28em] uppercase text-[#2F2F31]">
+                {word}
+              </span>
+              <span className="ml-4 sm:ml-6 text-xs text-[#2F2F31]/80 select-none" aria-hidden="true">
+                ✦
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

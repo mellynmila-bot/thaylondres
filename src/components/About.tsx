@@ -40,7 +40,8 @@ export const About: React.FC<AboutProps> = ({ lang }) => {
                   className="w-full h-full object-cover object-center animate-in fade-in duration-500"
                   width="500"
                   height="625"
-                  loading="lazy"
+                  loading="eager"
+                  decoding="async"
                 />
 
                 {/* Left Arrow Button */}

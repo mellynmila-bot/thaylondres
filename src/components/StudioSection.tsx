@@ -81,7 +81,10 @@ export const StudioSection: React.FC<StudioSectionProps> = ({
                   src={photoUrl}
                   alt={`Studio Thalyta Pires photo ${idx + 1}`}
                   className="w-full h-full object-cover object-center"
-                  loading="lazy"
+                  loading={idx === 0 ? 'eager' : 'lazy'}
+                  decoding="async"
+                  width="900"
+                  height="400"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent flex items-end justify-between p-4 sm:p-6 text-[#F6F1E8]">
                   <span className="text-xs font-semibold tracking-widest uppercase bg-[#2F2F31]/80 px-3 py-1 border border-[#C6A25A]">
