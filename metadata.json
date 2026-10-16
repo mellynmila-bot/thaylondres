@@ -1,0 +1,7 @@
+{
+  "name": "Thalyta Pires Beauty",
+  "description": "Thalyta Pires Beauty - Maquiadora e hair stylist em Londres com atendimento a domicílio, penteados e curso de automaquiagem.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
